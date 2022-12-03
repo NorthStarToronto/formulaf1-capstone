@@ -1,6 +1,6 @@
 # Databricks notebook source
 # MAGIC %md
-# MAGIC ### Notebook for cleansing and batch loading raw circuits CSV file into a managed Hive delta table 
+# MAGIC ### Notebook for cleansing and batch loading raw circuits CSV file into a managed delta table 
 
 # COMMAND ----------
 
@@ -14,7 +14,7 @@
 # COMMAND ----------
 
 ### Configure the file date parameter for loading the data by the file_date folder name
-dbutils.widgets.text("p_file_date", "")
+dbutils.widgets.text("p_file_date", "2021-03-21")
 v_file_date = dbutils.widgets.get("p_file_date")
 
 # COMMAND ----------
@@ -84,7 +84,7 @@ circuits_final_df = circuits_renamed_df \
 # COMMAND ----------
 
 # MAGIC %md
-# MAGIC ##### Step 4 - Write data to delta lake in full overwrite mode
+# MAGIC ##### Step 4 - Write the data to delta lake in full overwrite mode
 
 # COMMAND ----------
 

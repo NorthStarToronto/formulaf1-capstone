@@ -14,7 +14,7 @@
 # COMMAND ----------
 
 ### Configure the file date parameter for loading the data by the file_date folder name
-dbutils.widgets.text("p_file_date", "")
+dbutils.widgets.text("p_file_date", "2021-03-21")
 v_file_date = dbutils.widgets.get("p_file_date")
 
 # COMMAND ----------
@@ -85,7 +85,7 @@ qualifying_final_df = qualifying_renamed_df \
 # COMMAND ----------
 
 # MAGIC %md
-# MAGIC ##### Step 4 - Write data to delta lake in incremental overwrite mode
+# MAGIC ##### Step 4 - Write the data to delta lake in incremental overwrite mode
 
 # COMMAND ----------
 

@@ -14,7 +14,7 @@
 # COMMAND ----------
 
 ### Configure the file date parameter for loading the data by the file_date folder name
-dbutils.widgets.text("p_file_date", "")
+dbutils.widgets.text("p_file_date", "2021-03-21")
 v_file_date = dbutils.widgets.get("p_file_date")
 
 # COMMAND ----------
@@ -71,7 +71,7 @@ from pyspark.sql.functions import col
 
 drivers_renamed_df = drivers_df \
     .select(col("driverId").alias("driver_id"), col("driverRef").alias("driver_ref"), 
-            col("name")) 
+            col("number"), col("name"), col("nationality")) 
 
 drivers_renamed_df.show(n = 3)
 
@@ -102,7 +102,7 @@ drivers_final_df = drivers_with_reformatted_name \
 # COMMAND ----------
 
 # MAGIC %md
-# MAGIC ##### Step 6 - Write data to delta lake in full overwrite mode
+# MAGIC ##### Step 6 - Write the data to delta lake in full overwrite mode
 
 # COMMAND ----------
 
