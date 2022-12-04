@@ -4,8 +4,8 @@
 -- COMMAND ----------
 
 -- MAGIC %python
--- MAGIC spark.sql(f"CREATE DATABASE IF NOT EXISTS f1_processed LOCATION '{processed_folder_path}'")
+-- MAGIC spark.sql(f"CREATE DATABASE IF NOT EXISTS f1_presentation LOCATION '{presentation_folder_path}'")
 
 -- COMMAND ----------
 
-DESC DATABASE f1_processed
+DESC DATABASE f1_presentation
